@@ -16,4 +16,8 @@ describe('Airport', function() {
     expect(airport.hanger).not.toEqual([]);
   });
 
+  it('has a default capacity', function() {
+    expect(airport.defaultCapacity).toEqual(10);
+  });
+
 });

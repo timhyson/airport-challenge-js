@@ -1,7 +1,6 @@
 function Airport() {
   this.hanger = [];
-
-  // this.defaultCapacity = 1;
+  this.defaultCapacity = 10;
 };
 
 Airport.prototype.land = function(plane) {
