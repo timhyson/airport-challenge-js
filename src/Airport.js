@@ -1,6 +1,7 @@
 function Airport() {
   this.hanger = [];
   this.defaultCapacity = 10;
+  this.isStormy = true;
 };
 
 Airport.prototype.land = function(plane) {
@@ -13,4 +14,8 @@ Airport.prototype.land = function(plane) {
 
 Airport.prototype.clearForTakeoff = function(plane) {
   this.hanger.pop(plane);
+};
+
+Airport.prototype.sunny = function() {
+  this.isStormy = false;
 };

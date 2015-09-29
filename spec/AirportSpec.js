@@ -37,4 +37,15 @@ describe('Airport', function() {
     }).toThrowError('Negative Ghost Rider, the pattern is full');
   });
 
+  it('has weather conditions', function() {
+    expect(airport.isStormy).toBeTruthy();
+  });
+
+  it('can be sunny', function() {
+    airport.sunny();
+    expect(airport.isStormy).toBeFalsy;
+  });
+
+  // it('will not allow a plane to land if weather is bad');
+
 });
