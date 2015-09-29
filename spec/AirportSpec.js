@@ -12,6 +12,7 @@ describe('Airport', function() {
   });
 
   it('can land a plane and add it to an array', function() {
+    // airport.sunny();
     airport.land(plane);
     expect(airport.hanger).not.toEqual([]);
   });
@@ -46,6 +47,16 @@ describe('Airport', function() {
     expect(airport.isStormy).toBeFalsy();
   });
 
-  // it('will not allow a plane to land if weather is bad');
+  it('can be stormy', function() {
+    airport.stormy();
+    expect(airport.isStormy).toBeTruthy();
+  });
+
+  // it('will not allow a plane to land if weather is bad', function() {
+  //   airport.stormy();
+  //   expect(function() {
+  //     airport.land(plane);
+  //   }).toThrowError('There\'s a storm brewing');
+  // });
 
 });
