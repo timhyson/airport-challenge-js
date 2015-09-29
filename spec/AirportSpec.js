@@ -43,7 +43,7 @@ describe('Airport', function() {
 
   it('can be sunny', function() {
     airport.sunny();
-    expect(airport.isStormy).toBeFalsy;
+    expect(airport.isStormy).toBeFalsy();
   });
 
   // it('will not allow a plane to land if weather is bad');
