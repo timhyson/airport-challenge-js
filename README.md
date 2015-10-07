@@ -1,6 +1,6 @@
 # airport-challenge-js
 
-Reworking of the airport challenge written in JavaScript and tested in Jasmine
+This is a simple reworking of the airport challenge from the first weekend challenge, but this time was written in JavaScript and tested in Jasmine.
 
 - How to install this on your machine
 - Outline your approach
