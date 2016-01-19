@@ -1,4 +1,5 @@
 describe('Plane', function() {
+  'use strict';
 
   var plane;
 
