@@ -12,6 +12,10 @@ Airport.prototype.clearForLanding = function(plane) {
   this._hanger.push(plane);
 };
 
+Airport.prototype.clearForTakeoff = function(plane) {
+  this._hanger = [];
+};
+
 //Airport.prototype.land = function(plane) {
 //  if (this.hanger.length >= this.defaultCapacity) {
 //    throw new Error('Negative Ghost Rider, the pattern is full');
@@ -20,10 +24,6 @@ Airport.prototype.clearForLanding = function(plane) {
 //  } else {
 //    this.hanger.push(plane);
 //  }
-//};
-//
-//Airport.prototype.clearForTakeoff = function(plane) {
-//  this.hanger.pop(plane);
 //};
 //
 //Airport.prototype.sunny = function() {

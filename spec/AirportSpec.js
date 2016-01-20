@@ -18,16 +18,16 @@ describe('Airport', function() {
     expect(airport.planes()).toEqual([plane]);
   });
 
+  it('can clear planes for takeoff', function() {
+    airport.clearForLanding(plane);
+    airport.clearForTakeoff(plane);
+    expect(airport.planes()).toEqual([]);
+  });
+
   xit('can land a plane and add it to an array', function() {
     // airport.sunny();
     airport.land(plane);
     expect(airport.hanger).not.toEqual([]);
-  });
-
-  xit('can clear a plane for takeoff', function() {
-    airport.land(plane);
-    airport.clearForTakeoff(plane);
-    expect(airport.hanger).toEqual([]);
   });
 
   xit('has a default capacity', function() {
