@@ -1,34 +1,40 @@
-describe('Airport', function() {
-  'use strict';
+'use strict';
 
+describe('Airport', function() {
   var airport;
   var plane;
 
   beforeEach(function() {
     airport = new Airport();
+    plane = jasmine.createSpy('plane');
   });
 
-  it('should be empty when created', function() {
-    expect(airport.hanger).toEqual([]);
+  it('has no planes by default', function() {
+    expect(airport.planes()).toEqual([]);
   });
 
-  it('can land a plane and add it to an array', function() {
+  it('can clear planes for landing', function() {
+    airport.clearForLanding(plane);
+    expect(airport.planes()).toEqual([plane]);
+  });
+
+  xit('can land a plane and add it to an array', function() {
     // airport.sunny();
     airport.land(plane);
     expect(airport.hanger).not.toEqual([]);
   });
 
-  it('can clear a plane for takeoff', function() {
+  xit('can clear a plane for takeoff', function() {
     airport.land(plane);
     airport.clearForTakeoff(plane);
     expect(airport.hanger).toEqual([]);
   });
 
-  it('has a default capacity', function() {
+  xit('has a default capacity', function() {
     expect(airport.defaultCapacity).toEqual(10);
   });
 
-  it('throws an error if the airport hanger is full', function() {
+  xit('throws an error if the airport hanger is full', function() {
     var capacity = airport.defaultCapacity;
     for (var i = 0; i < capacity; i++) {
       airport.land(plane);
@@ -39,16 +45,16 @@ describe('Airport', function() {
     }).toThrowError('Negative Ghost Rider, the pattern is full');
   });
 
-  it('has weather conditions', function() {
+  xit('has weather conditions', function() {
     expect(airport.isStormy).toBeTruthy();
   });
 
-  it('can be sunny', function() {
+  xit('can be sunny', function() {
     airport.sunny();
     expect(airport.isStormy).toBeFalsy();
   });
 
-  it('can be stormy', function() {
+  xit('can be stormy', function() {
     airport.stormy();
     expect(airport.isStormy).toBeTruthy();
   });
