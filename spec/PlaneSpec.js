@@ -19,9 +19,4 @@ describe('Plane', function() {
     plane.takeoff();
     expect(airport.clearForTakeoff).toHaveBeenCalled();
   });
-
-  xit('should be flying when created', function() {
-    expect(plane.isFlying).toBeTruthy();
-  });
-
 });

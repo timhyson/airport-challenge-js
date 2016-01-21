@@ -1,6 +1,7 @@
-'use strict'
+'use strict';
 
-function Airport() {
+function Airport(weather) {
+  this._weather = typeof weather !== 'undefined' ? weather : new Weather();
   this._hanger = [];
 };
 
@@ -9,37 +10,15 @@ Airport.prototype.planes = function() {
 };
 
 Airport.prototype.clearForLanding = function(plane) {
-  if(this.isStormy()) {
+  if(this._weather.isStormy()) {
     throw new Error('cannot land during storm');
   };
   this._hanger.push(plane);
 };
 
 Airport.prototype.clearForTakeoff = function(plane) {
-  if(this.isStormy()) {
+  if(this._weather.isStormy()) {
     throw new Error('cannot takeoff during storm');
   };
   this._hanger = [];
 };
-
-Airport.prototype.isStormy = function() {
-  return false
-};
-
-//Airport.prototype.land = function(plane) {
-//  if (this.hanger.length >= this.defaultCapacity) {
-//    throw new Error('Negative Ghost Rider, the pattern is full');
-//  // } else if (this.isStormy = true) {
-//  //   throw new Error('There\'s a storm brewing');
-//  } else {
-//    this.hanger.push(plane);
-//  }
-//};
-//
-//Airport.prototype.sunny = function() {
-//  this.isStormy = false;
-//};
-//
-//Airport.prototype.stormy = function() {
-//  this.isStormy = true;
-//};
